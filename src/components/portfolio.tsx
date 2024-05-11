@@ -10,12 +10,15 @@ import {
   MenuIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { clickerScript } from "@/app/layout";
 import {
   GitHubLogoIcon,
   LinkedInLogoIcon,
   TwitterLogoIcon,
 } from "@radix-ui/react-icons";
+import { Clicker_Script } from "next/font/google";
+import Image from "next/image";
+
+export const clickerScript = Clicker_Script({ subsets: ["latin"], display: 'swap', weight: '400'});
 
 export const Navbar = () => {
   return (
@@ -59,7 +62,7 @@ export const Hero = () => {
       className="z-50 bg-gradient-to-l from-blue-900 to-gray-900 text-white text-center flex flex-col md:flex-row-reverse items-center justify-center min-h-screen md:text-left p-4 lg:p-8"
     >
       <div className="flex bg-gradient-radial from-gray-900/50 shadow-2xl to-white/50 rounded-full justify-center md:justify-start mb-8  scale-75 lg:scale-100">
-        <img
+        <Image
           alt="Vaibhav Kumar Singh"
           className="rounded-full shadow-2xl"
           height={500}
