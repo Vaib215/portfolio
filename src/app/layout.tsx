@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(scopeOne.className, "h-screen overflow-auto custom-scrollbar")}>
+      <body className={cn(scopeOne.className, "h-screen overflow-auto custom-scrollbar flex flex-col bg-gradient-to-l from-blue-900 to-gray-900 snap-mandatory snap-y items-center")}>
         {children}
         <Analytics />
       </body>

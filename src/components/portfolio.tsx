@@ -4,10 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import {
-  ArrowDownNarrowWide,
   ArrowRightIcon,
-  Download,
-  MenuIcon,
+  Download
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
@@ -17,6 +15,7 @@ import {
 } from "@radix-ui/react-icons";
 import { Clicker_Script } from "next/font/google";
 import Image from "next/image";
+import { Navbar } from "./layout/navbar";
 
 export const clickerScript = Clicker_Script({
   subsets: ["latin"],
@@ -24,48 +23,13 @@ export const clickerScript = Clicker_Script({
   weight: "400",
 });
 
-export const Navbar = () => {
-  return (
-    <header className="bg-black/50 w-full z-40 backdrop-blur fixed top-0 text-white py-4 px-6 md:px-8">
-      <div className="container mx-auto flex items-center justify-between">
-        <Link className="text-xl font-bold" href="#" scroll={false}>
-          Vaibhav Kumar Singh
-        </Link>
-        <nav className="hidden md:flex items-center space-x-6">
-          <Link className="hover:text-gray-300" href="#home">
-            Home
-          </Link>
-          <Link className="hover:text-gray-300" href="#education">
-            Education
-          </Link>
-          <Link className="hover:text-gray-300" href="#achievements">
-            Achievements
-          </Link>
-          <Link className="hover:text-gray-300" href="#projects">
-            Projects
-          </Link>
-          <Link className="hover:text-gray-300" href="#blog">
-            Blog
-          </Link>
-          <Link className="hover:text-gray-300" href="#contact">
-            Contact
-          </Link>
-        </nav>
-        <button className="md:hidden">
-          <MenuIcon className="h-6 w-6" />
-        </button>
-      </div>
-    </header>
-  );
-};
-
 export const Hero = () => {
   return (
     <section
       id="home"
-      className="z-50 bg-gradient-to-l from-blue-900 to-gray-900 text-white text-center flex flex-col md:flex-row-reverse items-center justify-center min-h-screen md:text-left p-4 lg:p-8"
+      className="snap-center shrink-0 z-50 bg-gradient-to-l from-blue-900 to-gray-900 text-white text-center flex flex-col md:flex-row-reverse items-center justify-center min-h-screen h-full md:text-left p-6 w-full"
     >
-      <div className="flex bg-gradient-radial from-gray-900/50 shadow-2xl to-white/40 rounded-full justify-center md:justify-start mb-8  scale-75 lg:scale-100">
+      <div className="flex bg-gradient-radial from-gray-900/50 shadow-2xl to-white/40 rounded-full justify-center md:justify-start mb-8 scale-75 lg:scale-100">
         <Image
           alt="Vaibhav Kumar Singh"
           className="rounded-full shadow-2xl opacity-80"
@@ -146,14 +110,11 @@ export const Hero = () => {
 
 export function Portfolio() {
   return (
-    <div
-      key="1"
-      className="flex flex-col bg-gradient-to-l from-blue-900 to-gray-900"
-    >
+    <>
       <Navbar />
       <Hero />
       <section
-        className="bg-gradient-to-l from-blue-900 to-gray-900 text-white flex flex-col justify-evenly p-4 md:p-16 lg:p-24"
+        className="bg-gradient-to-l snap-center from-blue-900 to-gray-900 text-white flex flex-col justify-evenly p-4 md:p-16 lg:p-24"
         id="education"
       >
         <div className="container px-4 md:px-6">
@@ -254,7 +215,7 @@ export function Portfolio() {
           </div>
         </section>
       </section>
-      <section className="py-20 md:py-32" id="projects">
+      <section className="py-20 md:py-32 snap-center" id="projects">
         <div className="container px-4 md:px-14 mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Projects</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -335,11 +296,10 @@ export function Portfolio() {
                 </Link>
               </div>
             </div>
-            
           </div>
         </div>
       </section>
-      <section className="py-20 md:py-32" id="blog">
+      <section className="py-20 md:py-32 snap-center" id="blog">
         <div className="container px-4 md:px-14 mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Blog</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -420,11 +380,10 @@ export function Portfolio() {
                 </Link>
               </div>
             </div>
-            
           </div>
         </div>
       </section>
-      <section className="text-white py-20 md:py-32" id="contact">
+      <section className="text-white py-20 md:py-32 snap-center" id="contact">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Contact Me</h2>
           <form className="max-w-xl mx-auto">
@@ -466,6 +425,6 @@ export function Portfolio() {
           </form>
         </div>
       </section>
-    </div>
+    </>
   );
 }
