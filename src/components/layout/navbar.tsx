@@ -1,11 +1,24 @@
-'use client';
+"use client";
 import Link from "next/link";
-import {
-  MenuIcon,
-  XIcon
-} from "lucide-react";
-import { useState } from "react";
+import { MenuIcon, XIcon } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+
+export const NavLink = ({
+  href,
+  children,
+  onClick,
+}: {
+  href: string;
+  children: React.ReactNode;
+  onClick: () => void;
+}) => {
+  return (
+    <Link className="hover:text-gray-300" href={href} onClick={onClick}>
+      {children}
+    </Link>
+  );
+};
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,28 +33,69 @@ export const Navbar = () => {
         <Link className="text-xl font-bold" href="#" scroll={false}>
           Vaibhav Kumar Singh
         </Link>
-        <nav className={`flex duration-300 lg:items-center lg:space-x-6 ${isMenuOpen ? 'flex-col absolute inset-0 h-screen justify-center items-start p-8 bg-black text-4xl opacity-100' : 'opacity-0 absolute lg:static lg:opacity-100 lg:flex'}`}>
-          <Button variant={"link"} size={"sm"} className="md:hidden absolute top-4 right-6 p-0" onClick={handleMenuClick} >
+        <nav
+          className={`flex duration-300 lg:items-center lg:space-x-6 ${
+            isMenuOpen
+              ? "flex-col absolute inset-0 h-screen justify-center items-start p-8 bg-black text-4xl opacity-100"
+              : "opacity-0 pointer-events-none lg:pointer-events-auto absolute lg:static lg:opacity-100 lg:flex"
+          }`}
+        >
+          <Button
+            variant={"link"}
+            size={"sm"}
+            className="md:hidden absolute top-4 right-6 p-0"
+            onClick={handleMenuClick}
+          >
             <XIcon />
           </Button>
-          <Link className="hover:text-gray-300" href="#home">
+          <NavLink
+            href="#home"
+            onClick={() => {
+              setIsMenuOpen(false);
+            }}
+          >
             Home
-          </Link>
-          <Link className="hover:text-gray-300" href="#education">
+          </NavLink>
+          <NavLink
+            href="#education"
+            onClick={() => {
+              setIsMenuOpen(false);
+            }}
+          >
             Education
-          </Link>
-          <Link className="hover:text-gray-300" href="#achievements">
+          </NavLink>
+          <NavLink
+            href="#achievements"
+            onClick={() => {
+              setIsMenuOpen(false);
+            }}
+          >
             Achievements
-          </Link>
-          <Link className="hover:text-gray-300" href="#projects">
+          </NavLink>
+          <NavLink
+            href="#projects"
+            onClick={() => {
+              setIsMenuOpen(false);
+            }}
+          >
             Projects
-          </Link>
-          <Link className="hover:text-gray-300" href="#blog">
+          </NavLink>
+          <NavLink
+            href="#blog"
+            onClick={() => {
+              setIsMenuOpen(false);
+            }}
+          >
             Blog
-          </Link>
-          <Link className="hover:text-gray-300" href="#contact">
+          </NavLink>
+          <NavLink
+            href="#contact"
+            onClick={() => {
+              setIsMenuOpen(false);
+            }}
+          >
             Contact
-          </Link>
+          </NavLink>
         </nav>
         <button className="md:hidden" onClick={handleMenuClick}>
           <MenuIcon className="h-6 w-6" />

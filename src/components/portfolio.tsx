@@ -27,9 +27,9 @@ export const Hero = () => {
   return (
     <section
       id="home"
-      className="snap-center shrink-0 z-50 bg-gradient-to-l from-blue-900 to-gray-900 text-white text-center flex flex-col md:flex-row-reverse items-center justify-center min-h-screen h-full md:text-left p-6 w-full"
+      className="snap-center shrink-0 z-50 bg-gradient-to-l from-blue-900 to-gray-900 text-white text-center flex flex-col md:flex-row-reverse items-center justify-center min-h-screen h-full md:text-left p-4 w-full"
     >
-      <div className="flex bg-gradient-radial from-gray-900/50 shadow-2xl to-white/40 rounded-full justify-center md:justify-start mb-8 scale-75 lg:scale-100">
+      <div className="flex bg-gradient-radial from-gray-900/50 shadow-2xl to-white/40 rounded-full justify-center md:justify-start mb-8 w-48 lg:w-auto">
         <Image
           alt="Vaibhav Kumar Singh"
           className="rounded-full shadow-2xl opacity-80"
@@ -55,7 +55,7 @@ export const Hero = () => {
         <p className="text-lg md:text-3xl mb-8">
           Full-Stack Web & App Developer
         </p>
-        <p className="max-w-2xl text-balance text-xl mx-auto md:mx-0 mb-12">
+        <p className="max-w-2xl text-balance lg:text-xl mx-auto md:mx-0 mb-12">
           Passionate about creating innovative web and mobile applications that
           deliver exceptional user experiences. Skilled in a wide range of
           technologies, including Next.js, Node.js, and React Native.
@@ -64,17 +64,17 @@ export const Hero = () => {
           <Button
             asChild
             variant={"ghost"}
-            className="flex bg-[#0077B5] duration-150 items-center justify-center px-6 py-3 rounded-md font-extrabold focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="flex bg-[#0077B5] duration-150 items-center justify-center px-0.5 rounded-md font-extrabold focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             <a href="https://linkedin.com/in/vaib215" target="_blank">
-              <LinkedInLogoIcon className="mr-2 mb-0.5 text-lg" />
-              Connect on LinkedIn
+              <LinkedInLogoIcon className="mr-1 mb-0.5 text-lg" />
+              Follow on LinkedIn
             </a>
           </Button>
           <Button
             asChild
             variant={"ghost"}
-            className="flex bg-[#1DA1F2] duration-150 items-center justify-center px-6 py-3 rounded-md font-extrabold focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="flex bg-[#1DA1F2] duration-150 items-center justify-center px-0.5 rounded-md font-extrabold focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             <a href="https://x.com/ThisIs_Vaib" target="_blank">
               <TwitterLogoIcon className="mr-2 mb-0.5 text-lg" />
@@ -84,21 +84,21 @@ export const Hero = () => {
           <Button
             asChild
             variant={"ghost"}
-            className="flex bg-gray-700 duration-150 items-center justify-center px-6 py-3 rounded-md font-extrabold focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="flex bg-gray-700 duration-150 rounded-md px-0.5 font-extrabold focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             <a href="https://github.com/vaib215" target="_blank">
               <GitHubLogoIcon className="mr-2 mb-0.5 text-lg" />
-              Follow on Github
+              <span>Follow on Github</span>
             </a>
           </Button>
           {/* Download resume */}
           <Button
             asChild
             variant={"ghost"}
-            className="flex bg-red-700 duration-150 items-center justify-center px-6 py-3 rounded-md font-extrabold focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="flex bg-red-800 duration-150 items-center justify-center px-0.5 rounded-md font-extrabold focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             <a href="/files/Vaibhav_Kumar_Singh_Resume.pdf" download>
-              <Download className="mr-2 mb-0.5 text-lg scale-90" />
+              <Download className="mr-0.5 mb-0.5 text-lg scale-75" />
               Download Resume
             </a>
           </Button>
