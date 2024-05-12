@@ -18,13 +18,17 @@ import {
 import { Clicker_Script } from "next/font/google";
 import Image from "next/image";
 
-export const clickerScript = Clicker_Script({ subsets: ["latin"], display: 'swap', weight: '400'});
+export const clickerScript = Clicker_Script({
+  subsets: ["latin"],
+  display: "swap",
+  weight: "400",
+});
 
 export const Navbar = () => {
   return (
-    <header className="bg-black/40 z-40 backdrop-blur fixed top-0 w-[99.2vw] text-white py-4 px-6 md:px-8">
+    <header className="bg-black/50 w-full z-40 backdrop-blur fixed top-0 text-white py-4 px-6 md:px-8">
       <div className="container mx-auto flex items-center justify-between">
-        <Link className="text-xl font-bold" href="#">
+        <Link className="text-xl font-bold" href="#" scroll={false}>
           Vaibhav Kumar Singh
         </Link>
         <nav className="hidden md:flex items-center space-x-6">
@@ -61,13 +65,14 @@ export const Hero = () => {
       id="home"
       className="z-50 bg-gradient-to-l from-blue-900 to-gray-900 text-white text-center flex flex-col md:flex-row-reverse items-center justify-center min-h-screen md:text-left p-4 lg:p-8"
     >
-      <div className="flex bg-gradient-radial from-gray-900/50 shadow-2xl to-white/50 rounded-full justify-center md:justify-start mb-8  scale-75 lg:scale-100">
+      <div className="flex bg-gradient-radial from-gray-900/50 shadow-2xl to-white/40 rounded-full justify-center md:justify-start mb-8  scale-75 lg:scale-100">
         <Image
           alt="Vaibhav Kumar Singh"
-          className="rounded-full shadow-2xl"
+          className="rounded-full shadow-2xl opacity-80"
           height={500}
           width={500}
           src="/profile.png"
+          loading="eager"
           style={{
             aspectRatio: 1,
             objectFit: "cover",
@@ -143,17 +148,17 @@ export function Portfolio() {
   return (
     <div
       key="1"
-      className="flex flex-col h-screen overflow-auto custom-scrollbar bg-gradient-to-l from-blue-900 to-gray-900"
+      className="flex flex-col bg-gradient-to-l from-blue-900 to-gray-900"
     >
       <Navbar />
       <Hero />
       <section
-        className="bg-gradient-to-l from-blue-900 to-gray-900 min-h-screen text-white flex flex-col justify-evenly p-4 md:p-16 lg:p-24"
+        className="bg-gradient-to-l from-blue-900 to-gray-900 text-white flex flex-col justify-evenly p-4 md:p-16 lg:p-24"
         id="education"
       >
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Education</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-2xl font-bold">
                 Bachelor of Engineering (B.E.)
@@ -197,7 +202,7 @@ export function Portfolio() {
         </div>
         <section id="achievements" className="container px-4 md:px-6 py-20">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Achievements</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white/10 rounded-md shadow-md p-6">
               <h3 className="text-xl font-bold mb-2">
                 Smart India Hackathon 2022 Finalist
@@ -250,180 +255,172 @@ export function Portfolio() {
         </section>
       </section>
       <section className="py-20 md:py-32" id="projects">
-        <div className="container px-4 md:px-28 mx-2">
+        <div className="container px-4 md:px-14 mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Projects</h2>
-          <div className="overflow-x-auto">
-            <div className="flex gap-8">
-              <div className="bg-gray-100 rounded-md shadow-md overflow-hidden flex-shrink-0 w-80">
-                <img
-                  alt="Project 1"
-                  className="w-full h-48 object-cover"
-                  height="200"
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "320/200",
-                    objectFit: "cover",
-                  }}
-                  width="320"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">Project 1</h3>
-                  <p className="text-gray-500 mb-4">
-                    A responsive web application built with React and Node.js.
-                  </p>
-                  <Link
-                    className="inline-flex items-center text-blue-500 hover:text-blue-600 font-medium"
-                    href="#"
-                  >
-                    <ArrowRightIcon className="w-5 h-5 mr-1" />
-                    View Project
-                  </Link>
-                </div>
-              </div>
-              <div className="bg-gray-100 rounded-md shadow-md overflow-hidden flex-shrink-0 w-80">
-                <img
-                  alt="Project 2"
-                  className="w-full h-48 object-cover"
-                  height="200"
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "320/200",
-                    objectFit: "cover",
-                  }}
-                  width="320"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">Project 2</h3>
-                  <p className="text-gray-500 mb-4">
-                    A mobile app developed using React Native and Expo.
-                  </p>
-                  <Link
-                    className="inline-flex items-center text-blue-500 hover:text-blue-600 font-medium"
-                    href="#"
-                  >
-                    <ArrowRightIcon className="w-5 h-5 mr-1" />
-                    View Project
-                  </Link>
-                </div>
-              </div>
-              <div className="bg-gray-100 rounded-md shadow-md overflow-hidden flex-shrink-0 w-80">
-                <img
-                  alt="Project 3"
-                  className="w-full h-48 object-cover"
-                  height="200"
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "320/200",
-                    objectFit: "cover",
-                  }}
-                  width="320"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">Project 3</h3>
-                  <p className="text-gray-500 mb-4">
-                    A full-stack web application built with React, Node.js, and
-                    MongoDB.
-                  </p>
-                  <Link
-                    className="inline-flex items-center text-blue-500 hover:text-blue-600 font-medium"
-                    href="#"
-                  >
-                    <ArrowRightIcon className="w-5 h-5 mr-1" />
-                    View Project
-                  </Link>
-                </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white/10 rounded-md shadow-md overflow-hidden">
+              <img
+                alt="Project 1"
+                className="w-full h-48 object-cover"
+                height="100"
+                src="/placeholder.svg"
+                style={{
+                  objectFit: "cover",
+                }}
+                width="160"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">Project 1</h3>
+                <p className="text-gray-300 mb-4">
+                  A responsive web application built with React and Node.js.
+                </p>
+                <Link
+                  className="inline-flex items-center text-blue-500 hover:text-blue-600 font-medium"
+                  href="#"
+                >
+                  <ArrowRightIcon className="w-5 h-5 mr-1" />
+                  View Project
+                </Link>
               </div>
             </div>
+            <div className="bg-white/10 rounded-md shadow-md overflow-hidden">
+              <img
+                alt="Project 1"
+                className="w-full h-48 object-cover"
+                height="200"
+                src="/placeholder.svg"
+                style={{
+                  aspectRatio: "320/200",
+                  objectFit: "cover",
+                }}
+                width="320"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">Project 1</h3>
+                <p className="text-gray-300 mb-4">
+                  A responsive web application built with React and Node.js.
+                </p>
+                <Link
+                  className="inline-flex items-center text-blue-500 hover:text-blue-600 font-medium"
+                  href="#"
+                >
+                  <ArrowRightIcon className="w-5 h-5 mr-1" />
+                  View Project
+                </Link>
+              </div>
+            </div>
+            <div className="bg-white/10 rounded-md shadow-md overflow-hidden">
+              <img
+                alt="Project 1"
+                className="w-full h-48 object-cover"
+                height="200"
+                src="/placeholder.svg"
+                style={{
+                  aspectRatio: "320/200",
+                  objectFit: "cover",
+                }}
+                width="320"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">Project 1</h3>
+                <p className="text-gray-300 mb-4">
+                  A responsive web application built with React and Node.js.
+                </p>
+                <Link
+                  className="inline-flex items-center text-blue-500 hover:text-blue-600 font-medium"
+                  href="#"
+                >
+                  <ArrowRightIcon className="w-5 h-5 mr-1" />
+                  View Project
+                </Link>
+              </div>
+            </div>
+            
           </div>
         </div>
       </section>
       <section className="py-20 md:py-32" id="blog">
-        <div className="container px-4 md:px-28 mx-2">
+        <div className="container px-4 md:px-14 mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Blog</h2>
-          <div className="overflow-x-auto">
-            <div className="flex gap-8">
-              <div className="bg-white rounded-md shadow-md overflow-hidden flex-shrink-0 w-80">
-                <img
-                  alt="Blog Post 1"
-                  className="w-full h-48 object-cover"
-                  height="200"
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "320/200",
-                    objectFit: "cover",
-                  }}
-                  width="320"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">Blog Post 1</h3>
-                  <p className="text-gray-500 mb-4">
-                    Exploring the latest trends in web development and their
-                    impact on the industry.
-                  </p>
-                  <Link
-                    className="inline-flex items-center text-blue-500 hover:text-blue-600 font-medium"
-                    href="#"
-                  >
-                    <ArrowRightIcon className="w-5 h-5 mr-1" />
-                    Read More
-                  </Link>
-                </div>
-              </div>
-              <div className="bg-white rounded-md shadow-md overflow-hidden flex-shrink-0 w-80">
-                <img
-                  alt="Blog Post 2"
-                  className="w-full h-48 object-cover"
-                  height="200"
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "320/200",
-                    objectFit: "cover",
-                  }}
-                  width="320"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">Blog Post 2</h3>
-                  <p className="text-gray-500 mb-4">
-                    Mastering React Native: Building cross-platform mobile apps
-                    with ease.
-                  </p>
-                  <Link
-                    className="inline-flex items-center text-blue-500 hover:text-blue-600 font-medium"
-                    href="#"
-                  >
-                    <ArrowRightIcon className="w-5 h-5 mr-1" />
-                    Read More
-                  </Link>
-                </div>
-              </div>
-              <div className="bg-white rounded-md shadow-md overflow-hidden flex-shrink-0 w-80">
-                <img
-                  alt="Blog Post 3"
-                  className="w-full h-48 object-cover"
-                  height="200"
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "320/200",
-                    objectFit: "cover",
-                  }}
-                  width="320"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">Blog Post 3</h3>
-                  <p className="text-gray-500 mb-4">
-                    Optimizing web performance: Techniques and best practices
-                    for faster loading times.
-                  </p>
-                  <Link
-                    className="inline-flex items-center text-blue-500 hover:text-blue-600 font-medium"
-                    href="#"
-                  >
-                    <ArrowRightIcon className="w-5 h-5 mr-1" />
-                    Read More
-                  </Link>
-                </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white/10 rounded-md shadow-md overflow-hidden">
+              <img
+                alt="Project 1"
+                className="w-full h-48 object-cover"
+                height="100"
+                src="/placeholder.svg"
+                style={{
+                  objectFit: "cover",
+                }}
+                width="160"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">Project 1</h3>
+                <p className="text-gray-300 mb-4">
+                  A responsive web application built with React and Node.js.
+                </p>
+                <Link
+                  className="inline-flex items-center text-blue-500 hover:text-blue-600 font-medium"
+                  href="#"
+                >
+                  <ArrowRightIcon className="w-5 h-5 mr-1" />
+                  View Project
+                </Link>
               </div>
             </div>
+            <div className="bg-white/10 rounded-md shadow-md overflow-hidden">
+              <img
+                alt="Project 1"
+                className="w-full h-48 object-cover"
+                height="200"
+                src="/placeholder.svg"
+                style={{
+                  aspectRatio: "320/200",
+                  objectFit: "cover",
+                }}
+                width="320"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">Project 1</h3>
+                <p className="text-gray-300 mb-4">
+                  A responsive web application built with React and Node.js.
+                </p>
+                <Link
+                  className="inline-flex items-center text-blue-500 hover:text-blue-600 font-medium"
+                  href="#"
+                >
+                  <ArrowRightIcon className="w-5 h-5 mr-1" />
+                  View Project
+                </Link>
+              </div>
+            </div>
+            <div className="bg-white/10 rounded-md shadow-md overflow-hidden">
+              <img
+                alt="Project 1"
+                className="w-full h-48 object-cover"
+                height="200"
+                src="/placeholder.svg"
+                style={{
+                  aspectRatio: "320/200",
+                  objectFit: "cover",
+                }}
+                width="320"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">Project 1</h3>
+                <p className="text-gray-300 mb-4">
+                  A responsive web application built with React and Node.js.
+                </p>
+                <Link
+                  className="inline-flex items-center text-blue-500 hover:text-blue-600 font-medium"
+                  href="#"
+                >
+                  <ArrowRightIcon className="w-5 h-5 mr-1" />
+                  View Project
+                </Link>
+              </div>
+            </div>
+            
           </div>
         </div>
       </section>
