@@ -12,7 +12,8 @@ const scopeOne = Scope_One({
 
 export const metadata: Metadata = {
   title: "Vaibhav Kumar Singh",
-  description: "I am a software engineer who loves to build things. I am passionate about web technologies and building products that help people.",
+  description:
+    "I am a software engineer who loves to build things. I am passionate about web technologies and building products that help people.",
 };
 
 export default function RootLayout({
@@ -21,8 +22,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={cn(scopeOne.className, "h-screen overflow-auto custom-scrollbar flex flex-col bg-gradient-to-l from-blue-900 to-gray-900 snap-mandatory snap-y items-center")}>
+    <html lang="en" className="dark">
+      <body
+        className={cn(
+          scopeOne.className,
+          "h-screen overflow-auto custom-scrollbar flex flex-col bg-gradient-to-l from-blue-900 to-gray-900 snap-mandatory snap-y items-center"
+        )}
+      >
         {children}
         <Analytics />
       </body>

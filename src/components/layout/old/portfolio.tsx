@@ -3,10 +3,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import {
-  ArrowRightIcon,
-  Download
-} from "lucide-react";
+import { ArrowRightIcon, Download } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   GitHubLogoIcon,
@@ -15,7 +12,7 @@ import {
 } from "@radix-ui/react-icons";
 import { Clicker_Script } from "next/font/google";
 import Image from "next/image";
-import { Navbar } from "./layout/navbar";
+import { Navbar } from "./navbar";
 
 export const clickerScript = Clicker_Script({
   subsets: ["latin"],
