@@ -9,10 +9,7 @@ import Footer from "@/components/layout/footer";
 
 const PortfolioWebsite = () => {
   return (
-    <div
-      id="home"
-      className="min-h-screen w-full bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
-    >
+    <div className="min-h-screen overflow-x-hidden w-full bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       <Navbar />
       <Hero />
       <About />

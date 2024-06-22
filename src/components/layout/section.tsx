@@ -19,7 +19,7 @@ export default function Section({
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl font-extrabold text-gray-900 dark:text-white mb-12 text-center"
+          className="text-4xl font-extrabold text-blue-500 dark:text-white mb-12 text-center"
         >
           {title}
         </motion.h2>

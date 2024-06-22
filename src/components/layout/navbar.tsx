@@ -6,7 +6,7 @@ export default function Navbar() {
       <div className="h-16" />
       <nav className="bg-white dark:bg-gray-800 shadow-md fixed w-full top-0 z-40 transition-colors duration-300">
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-16 py-3">
             <div className="flex-shrink-0 flex items-center">
               <a
                 href="#"
@@ -15,7 +15,7 @@ export default function Navbar() {
                 Vaib
               </a>
             </div>
-            <div className="flex items-center">
+            <div className="grid grid-cols-3 sm:flex items-center">
               {[
                 "Home",
                 "About",
